@@ -1,0 +1,113 @@
+{
+  "run_id": "ez0-20261007",
+  "timestamp": "2026-10-07T20:13:31.461098+00:00",
+  "git_commit": "fddc5181a0f05fa59acd64b5478a174a6cbfb8d7",
+  "git_branch": "experiment/zero-20261007",
+  "worktree": "/home/superadmin/lambda-lingua-experiment-zero-20261007",
+  "working_tree_status": [
+    "?? conditions/",
+    "?? runner/experiment_zero.py"
+  ],
+  "ollama_version": "0.17.6",
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "models": [
+    "gemma3:1b",
+    "qwen3:1.7b",
+    "qwen3.5:2b"
+  ],
+  "model_digests": {
+    "gemma3:1b": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+    "qwen3:1.7b": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+    "qwen3.5:2b": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df"
+  },
+  "input_hashes": {
+    "spec/lambda-v0.md": "2230db566f2ab6c08c9e0b5c23ca93d28e237328720553214da8f231f35a7cac",
+    "benchmark/schema-v0.json": "0e7c90c36aa9ea56054019b7edef1997f98cfdc950b6bf6596b16f5bd3e261fa",
+    "benchmark/microtasks-v0.jsonl": "9f1083bda83f339dd1d316a408f6fb9b8c1be9dbcb60ecd3862b5e084768db2b",
+    "controls/natural-language-v0.md": "a735ef47868fa7f0a01fb4bb2a41bd2870a52f7681bff31979be9021cdaecb3b",
+    "artifacts/historical/README.md": "808dc04480f19477c2f66f50bedb385baf08a593415cd11b124c3852c04b8569",
+    "artifacts/historical/first-gemma-attempt-T01.json": "f276edb62cac0297ef98ebfa5c005d4f89fd9c53a658d960298447b0c029d22b",
+    "conditions/minimal-lambda-v0-bootstrap.md": "02af38266b1768a13c7bfdddd08a030333aaebd3e6b61dbf018b737f811d949f"
+  },
+  "minimal_bootstrap_path": "conditions/minimal-lambda-v0-bootstrap.md",
+  "minimal_bootstrap_sha256": "02af38266b1768a13c7bfdddd08a030333aaebd3e6b61dbf018b737f811d949f",
+  "minimal_bootstrap_text": "# ΛLingua v0 — minimal bootstrap\n\n| Symbol | Meaning |\n|---|---|\n| φ | assertion |\n| ε | evidence |\n| ? | unknown |\n| ĥ | hypothesis |\n| ∵ | supported-by relation |\n\nNo other operators exist.\n\n    φ:TERM       TERM is an assertion.\n    ε:TERM       TERM is an evidence item.\n    ?:TERM       TERM is unknown.\n    ĥ:TERM       TERM is a hypothesis.\n    φ:X ∵ ε:E1   Assertion X is supported by evidence item E1.\n\nAn unknown must not become an assertion or hypothesis.\nA hypothesis must not become an assertion.\nA support relation keeps both endpoints and its direction.\n",
+  "runner_sha256": "ea2bda568d892610256c5c5943f1fec4d2ae58f9dad4cbcca05f166900aa5b37",
+  "config": {
+    "conditions": {
+      "A": {
+        "source": "controls/natural-language-v0.md",
+        "header": "SECTION A — FROZEN NATURAL-LANGUAGE CONTROL",
+        "instruction": "Represent the epistemic state using the natural-language control only.\nDo not explain.\nDo not redefine, extend, or negotiate the protocol.\nReturn only the natural-language representation."
+      },
+      "B": {
+        "source": "spec/lambda-v0.md",
+        "header": "SECTION A — FROZEN ΛLINGUA BOOTSTRAP",
+        "instruction": "Represent the epistemic state using ΛLingua v0 only.\nDo not explain.\nDo not redefine, extend, or negotiate the protocol.\nReturn only the ΛLingua representation."
+      },
+      "C": {
+        "source": "conditions/minimal-lambda-v0-bootstrap.md",
+        "header": "SECTION A — MINIMAL ΛLINGUA BOOTSTRAP",
+        "instruction": "Represent the epistemic state using ΛLingua v0 only.\nDo not explain.\nDo not redefine, extend, or negotiate the protocol.\nReturn only the ΛLingua representation."
+      }
+    },
+    "calibration_tasks": [
+      "T01"
+    ],
+    "official_tasks": [
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10"
+    ],
+    "options": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 512,
+      "seed": 0
+    },
+    "keep_alive": 0,
+    "think": false,
+    "request_timeout_s": 300,
+    "max_attempts": 2,
+    "endpoint": "/api/generate",
+    "stream": false,
+    "safety": {
+      "vram_peak_max_mib": 5800,
+      "post_unload_vram_slack_mib": 512,
+      "ram_available_min_mib": 1500,
+      "unload_timeout_s": 60
+    },
+    "order": "model-major, then condition A,B,C, then task id"
+  },
+  "baseline": {
+    "t": "2026-10-07T20:13:31.396408+00:00",
+    "loaded_models": [],
+    "vram_used_mib": 378,
+    "vram_total_mib": 6144,
+    "gpu_util_pct": 1,
+    "ram_total_mib": 9948,
+    "ram_available_mib": 8681,
+    "swap_free_mib": 1999,
+    "swap_total_mib": 2048
+  },
+  "checks": {
+    "worktree": true,
+    "branch": true,
+    "lab_guard": true,
+    "frozen_unchanged": true,
+    "ollama_reachable": true,
+    "models_visible": true,
+    "no_model_loaded": true,
+    "ram_ok": true,
+    "vram_baseline_ok": true,
+    "tasks_present": true
+  },
+  "frozen_diff": "",
+  "status": "PASS"
+}

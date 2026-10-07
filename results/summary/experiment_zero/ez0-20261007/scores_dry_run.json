@@ -1,0 +1,807 @@
+{
+  "run_id": "ez0-20261007",
+  "phase": "dry_run",
+  "official_score": false,
+  "scorer_sha256": "de45fd781df6d5555a7407a55372176ace908ce52d557b74b8eaa722c4f3438b",
+  "definitions": {
+    "strict": "term identity = equality after uppercasing and removing non-alphanumerics",
+    "lenient": "strict, plus token-set Jaccard >= 0.5 with unique best candidate (uncertain)",
+    "SF": "matched canonical items (assertions+evidence+unknowns+hypotheses+edges) / (canonical items + extra unsupported items), micro-averaged",
+    "PS": "canonical support edges preserved with exact endpoints and direction / canonical support edges",
+    "US": "(unknowns preserved as ? + hypotheses preserved as ĥ) / (canonical unknowns + hypotheses)",
+    "PV": "records with >=1 syntax/protocol violation; total violations",
+    "TC": "prompt + output tokens as reported by Ollama",
+    "condition_A": "natural language; only evidence-identifier presence scored deterministically, rest manual_review_required",
+    "unmarked_support_left": "a term on the left of ∵ without φ counts as an assertion for semantic scoring and is also reported as missing_assertion_marker"
+  },
+  "strict": [
+    {
+      "model": "gemma3:1b",
+      "condition": "A",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 266,
+        "output_tokens": 14,
+        "total_tokens": 280,
+        "mean_output_tokens": 14.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 0.0
+    },
+    {
+      "model": "gemma3:1b",
+      "condition": "B",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 864,
+        "output_tokens": 25,
+        "total_tokens": 889,
+        "mean_output_tokens": 25.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 1.0,
+      "PS": 1.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 6
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 1,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 1,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "gemma3:1b",
+      "condition": "C",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 256,
+        "output_tokens": 6,
+        "total_tokens": 262,
+        "mean_output_tokens": 6.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.0,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 3
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "A",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 273,
+        "output_tokens": 26,
+        "total_tokens": 299,
+        "mean_output_tokens": 26.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 1.0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "B",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 879,
+        "output_tokens": 12,
+        "total_tokens": 891,
+        "mean_output_tokens": 12.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 1.0,
+      "PS": 1.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 1,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "C",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 261,
+        "output_tokens": 11,
+        "total_tokens": 272,
+        "mean_output_tokens": 11.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.0,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 3
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "A",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 265,
+        "output_tokens": 16,
+        "total_tokens": 281,
+        "mean_output_tokens": 16.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 1.0
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "B",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 841,
+        "output_tokens": 14,
+        "total_tokens": 855,
+        "mean_output_tokens": 14.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.25,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 1,
+        "extra_unsupported_state": 1
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "C",
+      "mode": "strict",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 249,
+        "output_tokens": 58,
+        "total_tokens": 307,
+        "mean_output_tokens": 58.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.125,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 6
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 5
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    }
+  ],
+  "lenient": [
+    {
+      "model": "gemma3:1b",
+      "condition": "A",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 266,
+        "output_tokens": 14,
+        "total_tokens": 280,
+        "mean_output_tokens": 14.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 0.0
+    },
+    {
+      "model": "gemma3:1b",
+      "condition": "B",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 864,
+        "output_tokens": 25,
+        "total_tokens": 889,
+        "mean_output_tokens": 25.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 1.0,
+      "PS": 1.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 6
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 1,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 1,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "gemma3:1b",
+      "condition": "C",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 256,
+        "output_tokens": 6,
+        "total_tokens": 262,
+        "mean_output_tokens": 6.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.0,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 3
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "A",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 273,
+        "output_tokens": 26,
+        "total_tokens": 299,
+        "mean_output_tokens": 26.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 1.0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "B",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 879,
+        "output_tokens": 12,
+        "total_tokens": 891,
+        "mean_output_tokens": 12.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 1.0,
+      "PS": 1.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 1,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 0
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3.5:2b",
+      "condition": "C",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 261,
+        "output_tokens": 11,
+        "total_tokens": 272,
+        "mean_output_tokens": 11.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.25,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 1,
+        "extra_unsupported_state": 1
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 1
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "A",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 265,
+        "output_tokens": 16,
+        "total_tokens": 281,
+        "mean_output_tokens": 16.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "manual_review_required",
+      "SF": null,
+      "PS": null,
+      "US": null,
+      "PV": null,
+      "evidence_identity": 1.0
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "B",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 841,
+        "output_tokens": 14,
+        "total_tokens": 855,
+        "mean_output_tokens": 14.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.25,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 0,
+        "total_violations": 0
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 1,
+        "extra_unsupported_state": 1
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    },
+    {
+      "model": "qwen3:1.7b",
+      "condition": "C",
+      "mode": "lenient",
+      "n": 1,
+      "TC": {
+        "prompt_tokens": 249,
+        "output_tokens": 58,
+        "total_tokens": 307,
+        "mean_output_tokens": 58.0
+      },
+      "done_reason_counts": {
+        "stop": 1
+      },
+      "scoring_status": "deterministic",
+      "SF": 0.125,
+      "PS": 0.0,
+      "US": null,
+      "PV": {
+        "records_with_violation": 1,
+        "total_violations": 6
+      },
+      "per_category": {
+        "assertions": {
+          "preserved": 0,
+          "canonical": 1
+        },
+        "evidence": {
+          "preserved": 1,
+          "canonical": 1
+        },
+        "unknowns": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "hypotheses": {
+          "preserved": 0,
+          "canonical": 0
+        },
+        "support_edges": {
+          "preserved": 0,
+          "canonical": 1
+        }
+      },
+      "detections": {
+        "hypothesis_laundering": 0,
+        "unknown_laundering": 0,
+        "status_change": 0,
+        "provenance_loss": 0,
+        "provenance_substitution": 0,
+        "extra_unsupported_state": 5
+      },
+      "missing_assertion_marker": 0,
+      "records_scoring_uncertain": 0
+    }
+  ]
+}

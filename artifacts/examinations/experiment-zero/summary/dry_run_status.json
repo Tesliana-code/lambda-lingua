@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "results": {
+    "gemma3:1b/A": true,
+    "gemma3:1b/B": true,
+    "gemma3:1b/C": true,
+    "qwen3:1.7b/A": true,
+    "qwen3:1.7b/B": true,
+    "qwen3:1.7b/C": true,
+    "qwen3.5:2b/A": true,
+    "qwen3.5:2b/B": true,
+    "qwen3.5:2b/C": true
+  },
+  "abort": null,
+  "timestamp": "2026-10-07T20:14:08.278497+00:00"
+}
