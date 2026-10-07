@@ -19,9 +19,16 @@ Gemma returned:
       "HTTP503": "∵ ε:E1"
     }
 
-The model preserved the assertion identity, evidence identity, and
-support relation, but omitted the `φ` assertion marker and wrapped
-the representation in a JSON-like structure.
+Interpretation:
 
-This artifact is preserved verbatim as historical evidence and must
-not be edited retroactively.
+- assertion identity preserved
+- evidence identity preserved
+- support relation preserved
+- assertion marker `φ` omitted
+- output reformatted into a JSON-like structure
+
+The model preserved much of the semantic state while violating
+the canonical ΛLingua representation.
+
+This artifact is preserved verbatim and must not be edited
+retroactively.
