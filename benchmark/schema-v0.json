@@ -1,0 +1,24 @@
+{
+  "version": "benchmark-v0",
+  "description": "Canonical epistemic-state schema for ΛLingua Experiment Zero.",
+  "task_fields": {
+    "id": "stable task identifier",
+    "input": "natural-language source state",
+    "canonical_state": {
+      "assertions": "array of asserted terms",
+      "evidence": "array of evidence identifiers",
+      "unknowns": "array of unknown terms",
+      "hypotheses": "array of hypothesis terms",
+      "support_edges": "array of [assertion, evidence] directed provenance edges"
+    }
+  },
+  "scoring_principles": [
+    "Preserve assertion identity.",
+    "Preserve evidence identity.",
+    "Preserve unknown status.",
+    "Preserve hypothesis status.",
+    "Preserve support edges exactly.",
+    "Do not invent unsupported state.",
+    "Do not upgrade hypotheses or unknowns into assertions."
+  ]
+}
