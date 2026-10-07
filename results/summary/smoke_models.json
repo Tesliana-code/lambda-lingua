@@ -1,0 +1,38 @@
+[
+  {
+    "model": "gemma3:1b",
+    "expected": "READY-gemma3:1b",
+    "response": "READY-gemma3:1b",
+    "thinking_present": false,
+    "done": true,
+    "done_reason": "stop",
+    "prompt_tokens": 25,
+    "output_tokens": 9,
+    "wall_seconds": 3.411,
+    "exact_match": true
+  },
+  {
+    "model": "qwen3:1.7b",
+    "expected": "READY-qwen3:1.7b",
+    "response": "READY-qwen3:1.7b",
+    "thinking_present": false,
+    "done": true,
+    "done_reason": "stop",
+    "prompt_tokens": 33,
+    "output_tokens": 10,
+    "wall_seconds": 2.066,
+    "exact_match": true
+  },
+  {
+    "model": "qwen3.5:2b",
+    "expected": "READY-qwen3.5:2b",
+    "response": "READY-qwen3.5:2b",
+    "thinking_present": false,
+    "done": true,
+    "done_reason": "stop",
+    "prompt_tokens": 29,
+    "output_tokens": 10,
+    "wall_seconds": 4.628,
+    "exact_match": true
+  }
+]
