@@ -1,0 +1,5 @@
+results/raw/
+results/tmp/
+*.log
+__pycache__/
+.venv/
