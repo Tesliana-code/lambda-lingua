@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Zero-Training Acquisition and Multi-Agent Transmission of a Novel Epistemic Protocol Across Heterogeneous Language Models}
+
+\author{
+  Iva Vrtari\'c \\
+  Independent Researcher
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ΛLingua is a compact symbolic protocol for representing assertions, evidence, uncertainty, hypotheses, and support relations across heterogeneous language models. We study whether unmodified models can acquire the protocol from a frozen specification and small in-context curriculum, how much teaching is required before competence becomes stable, and whether epistemic structure survives model-to-model transmission. Experiment Zero establishes a zero-training baseline across multiple local model families and shows that protocol-looking output can diverge sharply from semantic correctness. Experiment One introduces disjoint checkpoint exams, corrective teaching rounds, cross-domain transfer, and bootstrap-compression conditions to measure acquisition cost and epistemic-status fidelity. A later Agent-Wire relay study will test semantic drift across heterogeneous multi-model handoffs. This manuscript is a work in progress; acquisition and relay results will be inserted only after the corresponding frozen experiments are complete.
+\end{abstract}
+
+\section{Introduction}
+
+Language models increasingly exchange summaries, tool results, intermediate states, and delegated tasks. In these handoffs, lexical content may survive while epistemic status changes. A possibility may become an assertion, evidence may detach from the claim it originally supported, or uncertainty may disappear during compression.
+
+ΛLingua is designed as a deliberately small protocol for making those distinctions explicit.
+
+The frozen ΛLingua v0 epistemic core is:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Symbol & Meaning \\
+\midrule
+$\phi$ & assertion \\
+$\epsilon$ & evidence \\
+? & unknown \\
+$\hat{h}$ & hypothesis \\
+$\because$ & supported-by relation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A canonical example is:
+
+\begin{verbatim}
+φ:HTTP503 ∵ ε:E1
+\end{verbatim}
+
+The marker $\phi$ denotes the represented epistemic role of the proposition; it does not certify objective truth.
+
+\section{Research Questions}
+
+The project is organized around three questions:
+
+\begin{enumerate}
+  \item Can heterogeneous, unmodified language models acquire ΛLingua from a compact frozen specification?
+  \item How much in-context teaching is required before acquisition becomes stable on unseen material?
+  \item Can a chain of heterogeneous models preserve shared epistemic state across repeated handoffs?
+\end{enumerate}
+
+\section{Experiment Zero: Zero-Training Baseline}
+
+Experiment Zero tested zero-training pickup under frozen bootstrap conditions.
+
+The initial model families were Gemma 3 1B, Qwen 3 1.7B, and Qwen 3.5 2B. A later replication added Phi-4 Mini 3.8B.
+
+The experiment distinguishes surface protocol resemblance from semantic preservation. Outputs are evaluated for semantic fidelity, provenance survival, uncertainty survival, and protocol violations.
+
+\subsection{Illustrative failure}
+
+For one task, the canonical state was:
+
+\begin{verbatim}
+φ:HEALTH_CHECK_FAILED ∵ ε:E7
+ε:E8
+?:DNS_CAUSED_INCIDENT
+\end{verbatim}
+
+A Phi replication produced:
+
+\begin{verbatim}
+φ:DNS_LOOKUP ∵ ε:E8
+?:HEALTH_CHECK_FAILURE
+ĥ:DNS_CAUSE
+\end{verbatim}
+
+The output is syntactically recognizable as ΛLingua while reassigning epistemic roles and provenance. This distinction motivates explicit epistemic-status scoring.
+
+\section{Experiment One: Acquisition}
+
+Experiment One moves from zero-training pickup to explicit in-context acquisition.
+
+The curriculum is evaluated at five checkpoints:
+
+\begin{verbatim}
+C0   specification only
+C1   + worked demonstrations
+C2   + corrective round 1
+C3   + corrective round 2
+C4   + corrective round 3
+\end{verbatim}
+
+Each checkpoint uses a separate structurally matched exam form:
+
+\begin{verbatim}
+C0 -> X0
+C1 -> X1
+C2 -> X2
+C3 -> X3
+C4 -> X4
+\end{verbatim}
+
+The forms are content-disjoint while sharing matched epistemic skeletons. This prevents repeated exposure to one exam from becoming part of the teaching process.
+
+\subsection{Acquisition metrics}
+
+In addition to the Experiment Zero metrics, Experiment One introduces Epistemic Status Fidelity (ESF) and acquisition-token measures.
+
+\begin{description}
+  \item[AT$\Lambda_{first}$] the first checkpoint at which the frozen competence threshold is reached.
+  \item[AT$\Lambda_{stable}$] the first checkpoint from which competence remains satisfied through C4.
+\end{description}
+
+ATΛ counts teaching tokens only.
+
+\subsection{Cross-domain transfer}
+
+Transfer items preserve the epistemic structures while changing subject matter across infrastructure, science, and logistics domains.
+
+\subsection{Bootstrap compression}
+
+The frozen compression study includes full specification, nested deletion variants, examples-only, and symbols-only conditions.
+
+\section{Multi-Agent Transmission}
+
+The final planned study places ΛLingua inside a controlled Agent-Wire relay.
+
+A semantic state will be passed through heterogeneous models while every handoff is preserved as a durable trace. The study will measure semantic drift, provenance decay, uncertainty laundering, hypothesis inflation, evidence mutation, error amplification, and repair behavior.
+
+\section{Reproducibility}
+
+Experimental inputs are frozen before inference. The repository preserves versioned specifications, benchmark files, SHA-256 manifests, disjoint exam forms, leakage checks, pinned model identities, fresh evaluation contexts, raw model responses, and deterministic scoring definitions.
+
+Changes to a frozen protocol, benchmark, threshold, or inference condition create a new experiment version rather than rewriting the original experiment.
+
+\section{Results}
+
+\textbf{Work in progress.}
+
+Experiment Zero and the Phi replication are complete. Experiment One official acquisition inference and the later Agent-Wire relay study must be completed before this section is finalized.
+
+\section{Discussion}
+
+\textbf{Placeholder.}
+
+This section will interpret model-family differences only after the full acquisition results are available.
+
+\section{Limitations}
+
+The current experiments use small local model families and a deliberately compact protocol. Results should not be generalized to larger proprietary systems without direct testing. The study evaluates preservation of represented epistemic state, not objective truth.
+
+\section{Conclusion}
+
+ΛLingua treats epistemic transport as a measurable problem. The project asks how little symbolic structure is required for heterogeneous models to preserve claims, evidence, uncertainty, and hypotheses across acquisition and communication.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
