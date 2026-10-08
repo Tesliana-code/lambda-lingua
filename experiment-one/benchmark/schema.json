@@ -1,0 +1,58 @@
+{
+  "version": "acq-01-benchmark-v2",
+  "description": "Item schema for ΛLingua Experiment One (acquisition). Extends benchmark-v0 canonical_state unchanged.",
+  "files": {
+    "acquisition-train.jsonl": "Stage 2 corrective exercises (TR01-TR09). Teaching only; never examined.",
+    "exam-skeletons.json": "24 matched epistemic skeletons (K01-K24), each with 5 disjoint content fillers; source of the checkpoint forms.",
+    "unseen-exam-X0.jsonl": "Checkpoint C0 form (X0-01..X0-24); also the form for every compression condition.",
+    "unseen-exam-X1.jsonl": "Checkpoint C1 form (X1-01..X1-24).",
+    "unseen-exam-X2.jsonl": "Checkpoint C2 form (X2-01..X2-24).",
+    "unseen-exam-X3.jsonl": "Checkpoint C3 form (X3-01..X3-24).",
+    "unseen-exam-X4.jsonl": "Checkpoint C4 / Stage 3 form (X4-01..X4-24).",
+    "transfer-exam.jsonl": "Stage 4 cross-domain transfer (TI/TS/TL 01-08): 8 isomorphic skeletons x 3 domains."
+  },
+  "item_fields": {
+    "id": "stable identifier",
+    "split": "train | unseen | transfer",
+    "form": "unseen only: X0-X4",
+    "checkpoint": "unseen only: C0-C4 (the only checkpoint at which the item is administered)",
+    "domain": "infrastructure | science | logistics",
+    "input": "natural-language source state",
+    "terms": "sorted list of term identifiers (assertions, unknowns, hypotheses) given to the model; evidence identifiers appear verbatim in input and are not listed",
+    "canonical_state": {
+      "assertions": "array of asserted terms",
+      "evidence": "array of evidence identifiers",
+      "unknowns": "array of unknown terms",
+      "hypotheses": "array of hypothesis terms",
+      "support_edges": "array of [assertion, evidence] directed provenance edges"
+    },
+    "canonical_lambda": "deterministic rendering: per assertion (in order) one line per edge 'φ:A ∵ ε:E' or 'φ:A'; then standalone evidence 'ε:E'; then '?:U'; then 'ĥ:H'",
+    "adversarial": "null | plausible_cause | orphan_evidence | unsupported_assertion | obvious_hypothesis | lexical_trap | crossed_evidence_late_qualifier",
+    "adversarial_taught_in_curriculum": "present when adversarial is non-null: whether a training item with the same trap type exists",
+    "cue_set": "taught = epistemic cue phrasing used in demonstrations/training; novel = phrasing never used in teaching material",
+    "skeleton": "unseen: K01-K24 (shared across forms X0-X4); transfer: S1-S8 (shared across domains)",
+    "round": "train only: corrective round 1-3"
+  },
+  "form_rules": [
+    "Item Xk-nn = skeleton Knn rendered with filler k by tools/build_exam_forms.py; files must equal a fresh render.",
+    "Forms share frames and structure; they share no term identifier, evidence identifier, input, or 4-word content sequence.",
+    "Evidence identifier = {evidence_kind}{1000*(k+1) + 10*skeleton + slot}."
+  ],
+  "authoring_conventions": [
+    "'<EVIDENCE> shows that X', 'X, as recorded in <EVIDENCE>', 'X ... documented in <EVIDENCE>' => φ:X ∵ ε:EVIDENCE.",
+    "'X; no evidence item is cited for this' => φ:X with no support edge.",
+    "'<EVIDENCE>, a ..., is on file; no finding is drawn from it' or '... was also collected but supports none of these statements' => standalone ε:EVIDENCE.",
+    "'Whether X is unknown', 'It has not been determined whether X', 'remains an open question', 'No one has established whether X' => ?:X.",
+    "'X has been put forward as a cause', 'X has been suggested ...', 'One working theory is X', 'under consideration, neither confirmed', 'or so it has been suggested; this is not confirmed' => ĥ:X.",
+    "Every source state is fully representable in ΛLingua v0; no item requires support edges on hypotheses or unknowns."
+  ],
+  "scoring_principles": [
+    "Preserve assertion identity.",
+    "Preserve evidence identity.",
+    "Preserve unknown status.",
+    "Preserve hypothesis status.",
+    "Preserve support edges exactly.",
+    "Do not invent unsupported state.",
+    "Do not upgrade hypotheses or unknowns into assertions."
+  ]
+}

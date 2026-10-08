@@ -1,0 +1,2004 @@
+{
+ "version": "acq-01-exam-skeletons-v1",
+ "description": "24 matched epistemic skeletons x 5 fillers -> checkpoint exam forms X0..X4 (C0..C4). Rendered by tools/build_exam_forms.py.",
+ "evidence_id_rule": "{evidence_kind}{1000*(form+1) + 10*skeleton_number + slot_number}, e.g. LOG1011 = form X0, K01, e1",
+ "skeletons": [
+  {
+   "id": "K01",
+   "frame": "{e1} shows that {a}.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [],
+   "hypotheses": [],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the cron daemon stopped",
+      "CRON_DAEMON_STOPPED"
+     ]
+    },
+    {
+     "a": [
+      "the NTP service lost synchronization",
+      "NTP_SYNC_LOST"
+     ]
+    },
+    {
+     "a": [
+      "the metrics exporter stopped reporting",
+      "EXPORTER_STOPPED_REPORTING"
+     ]
+    },
+    {
+     "a": [
+      "the backup volume was unmounted",
+      "BACKUP_VOLUME_UNMOUNTED"
+     ]
+    },
+    {
+     "a": [
+      "the SSH daemon refused new sessions",
+      "SSHD_REFUSED_SESSIONS"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K02",
+   "frame": "It has not been determined whether {u}.",
+   "evidence_kind": null,
+   "assertions": [],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "u": [
+      "the object store lost any writes",
+      "OBJECT_STORE_LOST_WRITES"
+     ]
+    },
+    {
+     "u": [
+      "the audit log was truncated",
+      "AUDIT_LOG_TRUNCATED"
+     ]
+    },
+    {
+     "u": [
+      "the message broker dropped acknowledged messages",
+      "BROKER_DROPPED_ACKED_MESSAGES"
+     ]
+    },
+    {
+     "u": [
+      "the snapshot was taken before the upgrade",
+      "SNAPSHOT_BEFORE_UPGRADE"
+     ]
+    },
+    {
+     "u": [
+      "the read replica served stale data",
+      "REPLICA_SERVED_STALE_DATA"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K03",
+   "frame": "One working theory is that {h}.",
+   "evidence_kind": null,
+   "assertions": [],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "h": [
+      "a kernel update caused the slowdown",
+      "KERNEL_UPDATE_CAUSED_SLOWDOWN"
+     ]
+    },
+    {
+     "h": [
+      "a leaked file descriptor exhausted the process limit",
+      "FD_LEAK_EXHAUSTED_LIMIT"
+     ]
+    },
+    {
+     "h": [
+      "a misconfigured proxy stripped the auth header",
+      "PROXY_STRIPPED_AUTH_HEADER"
+     ]
+    },
+    {
+     "h": [
+      "an expired API token broke the sync job",
+      "EXPIRED_TOKEN_BROKE_SYNC"
+     ]
+    },
+    {
+     "h": [
+      "a firmware bug reset the storage controller",
+      "FIRMWARE_BUG_RESET_CONTROLLER"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K04",
+   "frame": "{e1} shows that {a}. Whether {u} is unknown. {h} has been put forward as a cause.",
+   "evidence_kind": "TRACE",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the search service returned empty results",
+      "SEARCH_EMPTY_RESULTS"
+     ],
+     "u": [
+      "the search index was corrupted",
+      "SEARCH_INDEX_CORRUPTED"
+     ],
+     "h": [
+      "a failed index rebuild",
+      "INDEX_REBUILD_FAILED"
+     ]
+    },
+    {
+     "a": [
+      "the checkout service returned stale carts",
+      "CHECKOUT_STALE_CARTS"
+     ],
+     "u": [
+      "the cart cache was invalidated",
+      "CART_CACHE_INVALIDATED"
+     ],
+     "h": [
+      "a replication delay in the cart store",
+      "CART_STORE_REPLICATION_DELAY"
+     ]
+    },
+    {
+     "a": [
+      "the image resizer produced blank thumbnails",
+      "BLANK_THUMBNAILS"
+     ],
+     "u": [
+      "the source images were intact",
+      "SOURCE_IMAGES_INTACT"
+     ],
+     "h": [
+      "an outdated codec library",
+      "OUTDATED_CODEC_LIBRARY"
+     ]
+    },
+    {
+     "a": [
+      "the login service rejected valid passwords",
+      "LOGIN_REJECTED_VALID_PASSWORDS"
+     ],
+     "u": [
+      "the password hashes were migrated",
+      "PASSWORD_HASHES_MIGRATED"
+     ],
+     "h": [
+      "a mismatched hashing parameter",
+      "HASHING_PARAMETER_MISMATCH"
+     ]
+    },
+    {
+     "a": [
+      "the report generator timed out",
+      "REPORT_GENERATOR_TIMED_OUT"
+     ],
+     "u": [
+      "the reporting database was locked",
+      "REPORTING_DB_LOCKED"
+     ],
+     "h": [
+      "an unindexed query",
+      "UNINDEXED_QUERY"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K05",
+   "frame": "{a}, as recorded in {e1}. {b}, as recorded in {e2}.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the VPN tunnel went down",
+      "VPN_TUNNEL_DOWN"
+     ],
+     "b": [
+      "the tunnel peer rejected the rekey request",
+      "PEER_REJECTED_REKEY"
+     ]
+    },
+    {
+     "a": [
+      "the storage array entered degraded mode",
+      "ARRAY_DEGRADED_MODE"
+     ],
+     "b": [
+      "a spare disk began rebuilding",
+      "SPARE_DISK_REBUILDING"
+     ]
+    },
+    {
+     "a": [
+      "the ingress controller reloaded its config",
+      "INGRESS_CONFIG_RELOADED"
+     ],
+     "b": [
+      "two routes returned 404 errors",
+      "TWO_ROUTES_404"
+     ]
+    },
+    {
+     "a": [
+      "the license server became unreachable",
+      "LICENSE_SERVER_UNREACHABLE"
+     ],
+     "b": [
+      "the build tools fell back to trial mode",
+      "BUILD_TOOLS_TRIAL_MODE"
+     ]
+    },
+    {
+     "a": [
+      "the edge router lost its BGP session",
+      "EDGE_ROUTER_BGP_SESSION_LOST"
+     ],
+     "b": [
+      "traffic shifted to the backup uplink",
+      "TRAFFIC_SHIFTED_BACKUP_UPLINK"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K06",
+   "frame": "{e1} shows that {a} and that {b}.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the cache hit rate dropped",
+      "CACHE_HIT_RATE_DROPPED"
+     ],
+     "b": [
+      "origin traffic doubled",
+      "ORIGIN_TRAFFIC_DOUBLED"
+     ]
+    },
+    {
+     "a": [
+      "the connection pool was exhausted",
+      "CONNECTION_POOL_EXHAUSTED"
+     ],
+     "b": [
+      "request latency tripled",
+      "REQUEST_LATENCY_TRIPLED"
+     ]
+    },
+    {
+     "a": [
+      "swap usage spiked",
+      "SWAP_USAGE_SPIKED"
+     ],
+     "b": [
+      "the OOM killer terminated a worker",
+      "OOM_KILLED_WORKER"
+     ]
+    },
+    {
+     "a": [
+      "the certificate chain was incomplete",
+      "CERT_CHAIN_INCOMPLETE"
+     ],
+     "b": [
+      "mobile clients failed the handshake",
+      "MOBILE_HANDSHAKE_FAILED"
+     ]
+    },
+    {
+     "a": [
+      "the event stream paused",
+      "EVENT_STREAM_PAUSED"
+     ],
+     "b": [
+      "the consumer offsets were reset",
+      "CONSUMER_OFFSETS_RESET"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K07",
+   "frame": "It is confirmed that {a}; {e1} documents this. Whether {u} remains an open question. {h} has been suggested as a candidate explanation.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the mail relay is rejecting messages",
+      "MAIL_RELAY_REJECTING"
+     ],
+     "u": [
+      "the relay IP address was blocklisted",
+      "RELAY_IP_BLOCKLISTED"
+     ],
+     "h": [
+      "an expired SPF record",
+      "SPF_RECORD_EXPIRED"
+     ]
+    },
+    {
+     "a": [
+      "the print server is dropping jobs",
+      "PRINT_SERVER_DROPPING_JOBS"
+     ],
+     "u": [
+      "the spool directory is full",
+      "SPOOL_DIRECTORY_FULL"
+     ],
+     "h": [
+      "a faulty printer driver",
+      "FAULTY_PRINTER_DRIVER"
+     ]
+    },
+    {
+     "a": [
+      "the CI runners are idle",
+      "CI_RUNNERS_IDLE"
+     ],
+     "u": [
+      "the job queue webhook fired",
+      "QUEUE_WEBHOOK_FIRED"
+     ],
+     "h": [
+      "a revoked runner registration token",
+      "RUNNER_TOKEN_REVOKED"
+     ]
+    },
+    {
+     "a": [
+      "the file share is read-only",
+      "FILE_SHARE_READ_ONLY"
+     ],
+     "u": [
+      "the share quota was reduced",
+      "SHARE_QUOTA_REDUCED"
+     ],
+     "h": [
+      "a filesystem error that forced a remount",
+      "FS_ERROR_FORCED_REMOUNT"
+     ]
+    },
+    {
+     "a": [
+      "the wiki is serving an old version",
+      "WIKI_SERVING_OLD_VERSION"
+     ],
+     "u": [
+      "the deploy hook ran",
+      "WIKI_DEPLOY_HOOK_RAN"
+     ],
+     "h": [
+      "a stale purge request",
+      "STALE_PURGE_REQUEST"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K08",
+   "frame": "Whether {u} is unknown. {h} has been put forward as a cause. {a}; no evidence item is cited for this.",
+   "evidence_kind": null,
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "u": [
+      "the container registry was reachable",
+      "REGISTRY_REACHABLE"
+     ],
+     "h": [
+      "registry rate limiting",
+      "REGISTRY_RATE_LIMITING"
+     ],
+     "a": [
+      "the image pulls failed",
+      "IMAGE_PULLS_FAILED"
+     ]
+    },
+    {
+     "u": [
+      "the license key was renewed",
+      "LICENSE_KEY_RENEWED"
+     ],
+     "h": [
+      "a clock mismatch on the license host",
+      "LICENSE_HOST_CLOCK_MISMATCH"
+     ],
+     "a": [
+      "the analytics suite stopped launching",
+      "ANALYTICS_SUITE_NOT_LAUNCHING"
+     ]
+    },
+    {
+     "u": [
+      "the vault was sealed",
+      "VAULT_SEALED"
+     ],
+     "h": [
+      "an expired unseal key share",
+      "UNSEAL_KEY_EXPIRED"
+     ],
+     "a": [
+      "the secrets fetch failed",
+      "SECRETS_FETCH_FAILED"
+     ]
+    },
+    {
+     "u": [
+      "the package mirror was in sync",
+      "MIRROR_IN_SYNC"
+     ],
+     "h": [
+      "an interrupted rsync run",
+      "RSYNC_INTERRUPTED"
+     ],
+     "a": [
+      "the package install failed",
+      "PACKAGE_INSTALL_FAILED"
+     ]
+    },
+    {
+     "u": [
+      "the LDAP server was reachable",
+      "LDAP_REACHABLE"
+     ],
+     "h": [
+      "a rotated bind password",
+      "BIND_PASSWORD_ROTATED"
+     ],
+     "a": [
+      "the group sync failed",
+      "GROUP_SYNC_FAILED"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K09",
+   "frame": "Two causes are under consideration, neither confirmed: {h} and {h2}.",
+   "evidence_kind": null,
+   "assertions": [],
+   "unknowns": [],
+   "hypotheses": [
+    "h",
+    "h2"
+   ],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "h": [
+      "a misrouted BGP announcement",
+      "BGP_MISROUTE"
+     ],
+     "h2": [
+      "a faulty optic on the core switch",
+      "CORE_SWITCH_FAULTY_OPTIC"
+     ]
+    },
+    {
+     "h": [
+      "a duplicate IP address",
+      "DUPLICATE_IP_ADDRESS"
+     ],
+     "h2": [
+      "a flapping network interface",
+      "FLAPPING_INTERFACE"
+     ]
+    },
+    {
+     "h": [
+      "a corrupted package cache",
+      "CORRUPTED_PACKAGE_CACHE"
+     ],
+     "h2": [
+      "a broken mirror signature",
+      "BROKEN_MIRROR_SIGNATURE"
+     ]
+    },
+    {
+     "h": [
+      "an exhausted inode table",
+      "INODE_TABLE_EXHAUSTED"
+     ],
+     "h2": [
+      "a runaway temp-file writer",
+      "RUNAWAY_TEMPFILE_WRITER"
+     ]
+    },
+    {
+     "h": [
+      "a misordered firewall chain",
+      "FIREWALL_CHAIN_MISORDERED"
+     ],
+     "h2": [
+      "an MTU mismatch on the overlay network",
+      "OVERLAY_MTU_MISMATCH"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K10",
+   "frame": "{e1} shows that {a}. {e2} shows that {b}. Whether {u} is unknown.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the payroll export finished late",
+      "PAYROLL_EXPORT_LATE"
+     ],
+     "b": [
+      "the export retried three times",
+      "EXPORT_RETRIED"
+     ],
+     "u": [
+      "the export file was complete",
+      "EXPORT_FILE_COMPLETE"
+     ]
+    },
+    {
+     "a": [
+      "the invoice batch was split in two",
+      "INVOICE_BATCH_SPLIT"
+     ],
+     "b": [
+      "the batch scheduler logged a warning",
+      "BATCH_SCHEDULER_WARNING"
+     ],
+     "u": [
+      "the customers were notified",
+      "CUSTOMERS_NOTIFIED"
+     ]
+    },
+    {
+     "a": [
+      "the log shipper fell behind",
+      "LOG_SHIPPER_BEHIND"
+     ],
+     "b": [
+      "the shipper buffer reached 90%",
+      "SHIPPER_BUFFER_90"
+     ],
+     "u": [
+      "any log lines were lost",
+      "LOG_LINES_LOST"
+     ]
+    },
+    {
+     "a": [
+      "the data warehouse load started late",
+      "WAREHOUSE_LOAD_LATE"
+     ],
+     "b": [
+      "the upstream extract was resent",
+      "UPSTREAM_EXTRACT_RESENT"
+     ],
+     "u": [
+      "the dashboard owners were informed",
+      "DASHBOARD_OWNERS_INFORMED"
+     ]
+    },
+    {
+     "a": [
+      "the nightly test suite ran twice",
+      "TEST_SUITE_RAN_TWICE"
+     ],
+     "b": [
+      "the trigger fired a duplicate event",
+      "DUPLICATE_TRIGGER_EVENT"
+     ],
+     "u": [
+      "the duplicate results were published",
+      "DUPLICATE_RESULTS_PUBLISHED"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K11",
+   "frame": "No one has established whether {u}, or whether {u2}.",
+   "evidence_kind": null,
+   "assertions": [],
+   "unknowns": [
+    "u",
+    "u2"
+   ],
+   "hypotheses": [],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "u": [
+      "the session store evicted active sessions",
+      "SESSIONS_EVICTED"
+     ],
+     "u2": [
+      "the eviction policy was changed",
+      "EVICTION_POLICY_CHANGED"
+     ]
+    },
+    {
+     "u": [
+      "the archive tapes are readable",
+      "ARCHIVE_TAPES_READABLE"
+     ],
+     "u2": [
+      "the tape drive was cleaned",
+      "TAPE_DRIVE_CLEANED"
+     ]
+    },
+    {
+     "u": [
+      "the failover script was tested",
+      "FAILOVER_SCRIPT_TESTED"
+     ],
+     "u2": [
+      "the standby site has current data",
+      "STANDBY_SITE_CURRENT"
+     ]
+    },
+    {
+     "u": [
+      "the old API keys were revoked",
+      "OLD_API_KEYS_REVOKED"
+     ],
+     "u2": [
+      "any client still uses them",
+      "CLIENT_USES_OLD_KEYS"
+     ]
+    },
+    {
+     "u": [
+      "encryption at rest is enabled",
+      "ENCRYPTION_AT_REST_ENABLED"
+     ],
+     "u2": [
+      "the key rotation schedule is active",
+      "KEY_ROTATION_ACTIVE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K12",
+   "frame": "{e1} shows that {a}. {e2}, {k}, is on file; no finding is drawn from it. {h} has been put forward as a cause.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the build agent ran out of disk space",
+      "BUILD_AGENT_OUT_OF_DISK"
+     ],
+     "k": "a CPU usage graph for the build agent",
+     "h": [
+      "a leftover cache directory",
+      "LEFTOVER_CACHE_DIRECTORY"
+     ]
+    },
+    {
+     "a": [
+      "the API pods were evicted",
+      "API_PODS_EVICTED"
+     ],
+     "k": "a network latency chart",
+     "h": [
+      "a node memory pressure condition",
+      "NODE_MEMORY_PRESSURE"
+     ]
+    },
+    {
+     "a": [
+      "the cron job sent duplicate emails",
+      "CRON_DUPLICATE_EMAILS"
+     ],
+     "k": "a list of mail server IP addresses",
+     "h": [
+      "an overlapping schedule entry",
+      "OVERLAPPING_SCHEDULE_ENTRY"
+     ]
+    },
+    {
+     "a": [
+      "the load test aborted early",
+      "LOAD_TEST_ABORTED"
+     ],
+     "k": "a screenshot of the test dashboard",
+     "h": [
+      "a misconfigured ramp-up stage",
+      "RAMP_UP_MISCONFIGURED"
+     ]
+    },
+    {
+     "a": [
+      "the database failover took four minutes",
+      "DB_FAILOVER_SLOW"
+     ],
+     "k": "a copy of the on-call rota",
+     "h": [
+      "a long transaction replay",
+      "LONG_TRANSACTION_REPLAY"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K13",
+   "frame": "{a}, as recorded in {e1}. It is being considered, without confirmation, that {h}. It has not been determined whether {u}.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the cluster autoscaler added four nodes",
+      "AUTOSCALER_ADDED_NODES"
+     ],
+     "h": [
+      "a traffic spike triggered the scale-up",
+      "TRAFFIC_SPIKE_TRIGGERED_SCALEUP"
+     ],
+     "u": [
+      "the spike was organic",
+      "SPIKE_ORGANIC"
+     ]
+    },
+    {
+     "a": [
+      "the job queue length doubled",
+      "JOB_QUEUE_DOUBLED"
+     ],
+     "h": [
+      "a retry storm filled the queue",
+      "RETRY_STORM_FILLED_QUEUE"
+     ],
+     "u": [
+      "the retries were client-initiated",
+      "RETRIES_CLIENT_INITIATED"
+     ]
+    },
+    {
+     "a": [
+      "the bandwidth bill rose sharply",
+      "BANDWIDTH_BILL_ROSE"
+     ],
+     "h": [
+      "a crawler downloaded the media archive",
+      "CRAWLER_DOWNLOADED_ARCHIVE"
+     ],
+     "u": [
+      "the crawler respected robots rules",
+      "CRAWLER_RESPECTED_ROBOTS"
+     ]
+    },
+    {
+     "a": [
+      "the name-server query volume tripled",
+      "NS_QUERY_VOLUME_TRIPLED"
+     ],
+     "h": [
+      "a misbehaving client looped on lookups",
+      "CLIENT_LOOPED_LOOKUPS"
+     ],
+     "u": [
+      "the client was internal",
+      "CLIENT_INTERNAL"
+     ]
+    },
+    {
+     "a": [
+      "the error budget was exhausted",
+      "ERROR_BUDGET_EXHAUSTED"
+     ],
+     "h": [
+      "a single flaky endpoint consumed the budget",
+      "FLAKY_ENDPOINT_CONSUMED_BUDGET"
+     ],
+     "u": [
+      "the endpoint is customer-facing",
+      "ENDPOINT_CUSTOMER_FACING"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K14",
+   "frame": "{a}; no evidence item is cited for this. Whether {u} is unknown.",
+   "evidence_kind": null,
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [],
+   "support_edges": [],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the status page was updated late",
+      "STATUS_PAGE_UPDATED_LATE"
+     ],
+     "u": [
+      "the on-call engineer was paged",
+      "ONCALL_PAGED"
+     ]
+    },
+    {
+     "a": [
+      "the maintenance window was extended",
+      "MAINTENANCE_WINDOW_EXTENDED"
+     ],
+     "u": [
+      "the customers were warned",
+      "CUSTOMERS_WARNED"
+     ]
+    },
+    {
+     "a": [
+      "the hotfix was deployed on Friday",
+      "HOTFIX_DEPLOYED_FRIDAY"
+     ],
+     "u": [
+      "the hotfix passed review",
+      "HOTFIX_PASSED_REVIEW"
+     ]
+    },
+    {
+     "a": [
+      "the runbook was out of date",
+      "RUNBOOK_OUTDATED"
+     ],
+     "u": [
+      "the incident commander used it",
+      "COMMANDER_USED_RUNBOOK"
+     ]
+    },
+    {
+     "a": [
+      "the alert threshold was raised",
+      "ALERT_THRESHOLD_RAISED"
+     ],
+     "u": [
+      "the change was approved",
+      "THRESHOLD_CHANGE_APPROVED"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K15",
+   "frame": "{a}, as documented in {e1}. {e2} documents that {b}. {h} has been suggested as a candidate explanation.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the schema migration failed",
+      "SCHEMA_MIGRATION_FAILED"
+     ],
+     "b": [
+      "the migration lock was held by another process",
+      "MIGRATION_LOCK_HELD"
+     ],
+     "h": [
+      "a deadlock with a long-running query",
+      "DEADLOCK_LONG_QUERY"
+     ]
+    },
+    {
+     "a": [
+      "the config push failed on twelve hosts",
+      "CONFIG_PUSH_FAILED"
+     ],
+     "b": [
+      "the hosts were running an old agent",
+      "HOSTS_OLD_AGENT"
+     ],
+     "h": [
+      "an incompatible agent protocol",
+      "INCOMPATIBLE_AGENT_PROTOCOL"
+     ]
+    },
+    {
+     "a": [
+      "the blue-green switch stalled",
+      "BLUE_GREEN_SWITCH_STALLED"
+     ],
+     "b": [
+      "the green pool failed its readiness probe",
+      "GREEN_POOL_NOT_READY"
+     ],
+     "h": [
+      "a missing environment variable",
+      "MISSING_ENV_VARIABLE"
+     ]
+    },
+    {
+     "a": [
+      "the index compaction aborted",
+      "INDEX_COMPACTION_ABORTED"
+     ],
+     "b": [
+      "the data node hit its heap limit",
+      "DATA_NODE_HEAP_LIMIT"
+     ],
+     "h": [
+      "an oversized shard",
+      "OVERSIZED_SHARD"
+     ]
+    },
+    {
+     "a": [
+      "the token refresh failed for mobile users",
+      "MOBILE_TOKEN_REFRESH_FAILED"
+     ],
+     "b": [
+      "the auth service returned malformed JSON",
+      "AUTH_MALFORMED_JSON"
+     ],
+     "h": [
+      "a serializer regression",
+      "SERIALIZER_REGRESSION"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K16",
+   "frame": "{e1} shows that {a}. Whether {u} is unknown. Whether {u2} is unknown.",
+   "evidence_kind": "TRACE",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u",
+    "u2"
+   ],
+   "hypotheses": [],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": null,
+   "adversarial_taught_in_curriculum": null,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the webhook deliveries timed out",
+      "WEBHOOK_DELIVERIES_TIMED_OUT"
+     ],
+     "u": [
+      "the receiving endpoint was down",
+      "RECEIVER_ENDPOINT_DOWN"
+     ],
+     "u2": [
+      "the timeout setting was too low",
+      "WEBHOOK_TIMEOUT_TOO_LOW"
+     ]
+    },
+    {
+     "a": [
+      "the payment callbacks arrived out of order",
+      "CALLBACKS_OUT_OF_ORDER"
+     ],
+     "u": [
+      "the provider retried them",
+      "PROVIDER_RETRIED_CALLBACKS"
+     ],
+     "u2": [
+      "any order was double-charged",
+      "ORDER_DOUBLE_CHARGED"
+     ]
+    },
+    {
+     "a": [
+      "the GraphQL gateway returned partial data",
+      "GRAPHQL_PARTIAL_DATA"
+     ],
+     "u": [
+      "a subgraph was unavailable",
+      "SUBGRAPH_UNAVAILABLE"
+     ],
+     "u2": [
+      "the client cached the partial response",
+      "CLIENT_CACHED_PARTIAL"
+     ]
+    },
+    {
+     "a": [
+      "the upload service rejected large files",
+      "UPLOAD_REJECTED_LARGE_FILES"
+     ],
+     "u": [
+      "the size limit was changed",
+      "UPLOAD_SIZE_LIMIT_CHANGED"
+     ],
+     "u2": [
+      "the proxy enforced its own limit",
+      "PROXY_OWN_LIMIT"
+     ]
+    },
+    {
+     "a": [
+      "the push notifications were delayed",
+      "PUSH_NOTIFICATIONS_DELAYED"
+     ],
+     "u": [
+      "the notification provider was throttling",
+      "PROVIDER_THROTTLING"
+     ],
+     "u2": [
+      "the device tokens were valid",
+      "DEVICE_TOKENS_VALID"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K17",
+   "frame": "{a}, as recorded in {e1}. {b}, as recorded in {e2}. It has not been determined whether {u}.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": "plausible_cause",
+   "adversarial_taught_in_curriculum": true,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the datacenter cooling unit failed",
+      "COOLING_UNIT_FAILED"
+     ],
+     "b": [
+      "servers in the hall throttled their CPUs",
+      "CPU_THROTTLING"
+     ],
+     "u": [
+      "the cooling failure caused the throttling",
+      "COOLING_FAILURE_CAUSED_THROTTLING"
+     ]
+    },
+    {
+     "a": [
+      "the primary power feed was cut",
+      "PRIMARY_POWER_FEED_CUT"
+     ],
+     "b": [
+      "the rack switched to battery power",
+      "RACK_ON_BATTERY"
+     ],
+     "u": [
+      "the power cut caused the switch to battery",
+      "POWER_CUT_CAUSED_BATTERY_SWITCH"
+     ]
+    },
+    {
+     "a": [
+      "the internal certificate authority was revoked",
+      "CA_REVOKED"
+     ],
+     "b": [
+      "service-to-service calls began failing TLS checks",
+      "SERVICE_TLS_CHECKS_FAILING"
+     ],
+     "u": [
+      "the revocation caused the TLS failures",
+      "REVOCATION_CAUSED_TLS_FAILURES"
+     ]
+    },
+    {
+     "a": [
+      "the root disk on the database host filled up",
+      "DB_ROOT_DISK_FULL"
+     ],
+     "b": [
+      "the database stopped accepting writes",
+      "DB_STOPPED_WRITES"
+     ],
+     "u": [
+      "the full root disk stopped the writes",
+      "ROOT_DISK_STOPPED_WRITES"
+     ]
+    },
+    {
+     "a": [
+      "the upstream provider announced an outage",
+      "PROVIDER_OUTAGE_ANNOUNCED"
+     ],
+     "b": [
+      "our API error rate rose to 30%",
+      "API_ERROR_RATE_30"
+     ],
+     "u": [
+      "the provider outage caused the error rate rise",
+      "OUTAGE_CAUSED_ERROR_RISE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K18",
+   "frame": "{e1} shows that {a}. {e2} shows that {b}. Whether {u} is unknown.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": "plausible_cause",
+   "adversarial_taught_in_curriculum": true,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the primary database was restarted",
+      "PRIMARY_DB_RESTARTED"
+     ],
+     "b": [
+      "write errors began one second later",
+      "WRITE_ERRORS_BEGAN"
+     ],
+     "u": [
+      "the database restart triggered the write errors",
+      "DB_RESTART_TRIGGERED_WRITE_ERRORS"
+     ]
+    },
+    {
+     "a": [
+      "the load balancer config was reloaded",
+      "LB_CONFIG_RELOADED"
+     ],
+     "b": [
+      "active websocket connections dropped at the same moment",
+      "WEBSOCKETS_DROPPED"
+     ],
+     "u": [
+      "the reload caused the dropped websockets",
+      "RELOAD_CAUSED_DROPPED_WEBSOCKETS"
+     ]
+    },
+    {
+     "a": [
+      "a bulk import started at 09:00",
+      "BULK_IMPORT_STARTED"
+     ],
+     "b": [
+      "query latency doubled at 09:01",
+      "QUERY_LATENCY_DOUBLED"
+     ],
+     "u": [
+      "the import caused the latency increase",
+      "IMPORT_CAUSED_LATENCY"
+     ]
+    },
+    {
+     "a": [
+      "the firewall rules were reapplied",
+      "FIREWALL_RULES_REAPPLIED"
+     ],
+     "b": [
+      "monitoring probes went silent immediately afterwards",
+      "PROBES_WENT_SILENT"
+     ],
+     "u": [
+      "the reapplied rules blocked the probes",
+      "RULES_BLOCKED_PROBES"
+     ]
+    },
+    {
+     "a": [
+      "the cache cluster was flushed",
+      "CACHE_CLUSTER_FLUSHED"
+     ],
+     "b": [
+      "database load spiked right after",
+      "DB_LOAD_SPIKED"
+     ],
+     "u": [
+      "the flush caused the load spike",
+      "FLUSH_CAUSED_LOAD_SPIKE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K19",
+   "frame": "{a}, as recorded in {e1}. {e2}, {k}, was also collected but supports none of these statements. {h} has been suggested as a candidate explanation.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": "orphan_evidence",
+   "adversarial_taught_in_curriculum": true,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the cache cluster lost quorum",
+      "CACHE_QUORUM_LOST"
+     ],
+     "k": "a packet capture from the cache network",
+     "h": [
+      "a network partition",
+      "NETWORK_PARTITION"
+     ]
+    },
+    {
+     "a": [
+      "the metadata service returned 500 errors",
+      "METADATA_SERVICE_500"
+     ],
+     "k": "a heap profile of the metadata service",
+     "h": [
+      "a request handler leaking memory",
+      "HANDLER_MEMORY_LEAK"
+     ]
+    },
+    {
+     "a": [
+      "the queue workers stopped consuming",
+      "QUEUE_WORKERS_STOPPED"
+     ],
+     "k": "a trace of the broker connections",
+     "h": [
+      "a broker connection limit",
+      "BROKER_CONNECTION_LIMIT"
+     ]
+    },
+    {
+     "a": [
+      "the storage nodes reported checksum errors",
+      "STORAGE_CHECKSUM_ERRORS"
+     ],
+     "k": "a SMART report from one of the disks",
+     "h": [
+      "a failing disk controller",
+      "FAILING_DISK_CONTROLLER"
+     ]
+    },
+    {
+     "a": [
+      "the video transcoder crashed",
+      "VIDEO_TRANSCODER_CRASHED"
+     ],
+     "k": "a sample of the input file",
+     "h": [
+      "a malformed input file",
+      "MALFORMED_INPUT_FILE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K20",
+   "frame": "{a}; no evidence item is cited for this. {e1} shows that {b}.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "b",
+     "e1"
+    ]
+   ],
+   "adversarial": "unsupported_assertion",
+   "adversarial_taught_in_curriculum": true,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the API returned stale prices",
+      "API_STALE_PRICES"
+     ],
+     "b": [
+      "the price feed job completed on time",
+      "PRICE_FEED_COMPLETED"
+     ]
+    },
+    {
+     "a": [
+      "the search results were missing new products",
+      "SEARCH_MISSING_NEW_PRODUCTS"
+     ],
+     "b": [
+      "the product indexer ran at midnight",
+      "PRODUCT_INDEXER_RAN"
+     ]
+    },
+    {
+     "a": [
+      "users saw an outdated banner",
+      "USERS_SAW_OUTDATED_BANNER"
+     ],
+     "b": [
+      "the content publish job succeeded",
+      "CONTENT_PUBLISH_SUCCEEDED"
+     ]
+    },
+    {
+     "a": [
+      "the dashboard showed zero orders",
+      "DASHBOARD_ZERO_ORDERS"
+     ],
+     "b": [
+      "the order pipeline processed 4000 orders",
+      "PIPELINE_PROCESSED_ORDERS"
+     ]
+    },
+    {
+     "a": [
+      "the mobile app displayed an old balance",
+      "APP_OLD_BALANCE"
+     ],
+     "b": [
+      "the balance service recomputed all balances",
+      "BALANCES_RECOMPUTED"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K21",
+   "frame": "{e1} shows that {a}. {e2} shows that {b}. That {h} has been suggested, but is not confirmed.",
+   "evidence_kind": "TRACE",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1",
+    "e2"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ],
+    [
+     "b",
+     "e2"
+    ]
+   ],
+   "adversarial": "obvious_hypothesis",
+   "adversarial_taught_in_curriculum": true,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the disk reported 100% usage",
+      "DISK_USAGE_FULL"
+     ],
+     "b": [
+      "writes to the disk failed",
+      "DISK_WRITES_FAILED"
+     ],
+     "h": [
+      "the full disk caused the failed writes",
+      "FULL_DISK_CAUSED_WRITE_FAILURES"
+     ]
+    },
+    {
+     "a": [
+      "the API certificate expired at noon",
+      "API_CERT_EXPIRED_NOON"
+     ],
+     "b": [
+      "clients began failing TLS handshakes at noon",
+      "CLIENT_HANDSHAKES_FAILED_NOON"
+     ],
+     "h": [
+      "the expired certificate caused the handshake failures",
+      "EXPIRED_CERT_CAUSED_HANDSHAKE_FAILURES"
+     ]
+    },
+    {
+     "a": [
+      "the database password was rotated",
+      "DB_PASSWORD_ROTATED"
+     ],
+     "b": [
+      "the app began logging authentication errors",
+      "APP_AUTH_ERRORS"
+     ],
+     "h": [
+      "the password rotation caused the authentication errors",
+      "ROTATION_CAUSED_AUTH_ERRORS"
+     ]
+    },
+    {
+     "a": [
+      "the network cable to host H12 was unplugged",
+      "H12_CABLE_UNPLUGGED"
+     ],
+     "b": [
+      "host H12 stopped responding to pings",
+      "H12_STOPPED_RESPONDING"
+     ],
+     "h": [
+      "the unplugged cable caused the lost pings",
+      "UNPLUGGED_CABLE_CAUSED_LOST_PINGS"
+     ]
+    },
+    {
+     "a": [
+      "the worker memory limit was lowered to 128 MB",
+      "WORKER_MEMORY_LIMIT_LOWERED"
+     ],
+     "b": [
+      "the worker was killed for exceeding its memory limit",
+      "WORKER_KILLED_MEMORY"
+     ],
+     "h": [
+      "the lowered limit caused the kill",
+      "LOWERED_LIMIT_CAUSED_KILL"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K22",
+   "frame": "{e1} shows that {a}. {h} has been put forward as a cause.",
+   "evidence_kind": "LOG",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": "lexical_trap",
+   "adversarial_taught_in_curriculum": false,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the resolver returned an unknown-host error",
+      "UNKNOWN_HOST_ERROR"
+     ],
+     "h": [
+      "an unregistered hostname",
+      "HOSTNAME_UNREGISTERED"
+     ]
+    },
+    {
+     "a": [
+      "the proxy logged an unknown user agent",
+      "UNKNOWN_USER_AGENT_LOGGED"
+     ],
+     "h": [
+      "a new monitoring crawler",
+      "NEW_MONITORING_CRAWLER"
+     ]
+    },
+    {
+     "a": [
+      "an unknown process was listening on port 8081",
+      "UNKNOWN_PROCESS_LISTENING"
+     ],
+     "h": [
+      "a leftover debug server",
+      "LEFTOVER_DEBUG_SERVER"
+     ]
+    },
+    {
+     "a": [
+      "the upload scanner flagged an unknown file type",
+      "UNKNOWN_FILE_TYPE_FLAGGED"
+     ],
+     "h": [
+      "a new partner export format",
+      "PARTNER_EXPORT_FORMAT"
+     ]
+    },
+    {
+     "a": [
+      "the bastion host recorded a login with an unknown SSH key",
+      "UNKNOWN_SSH_KEY_LOGIN"
+     ],
+     "h": [
+      "a newly generated engineer key",
+      "ENGINEER_NEW_KEY"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K23",
+   "frame": "{e1} shows that {a}. Whether {u} is unknown.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a"
+   ],
+   "unknowns": [
+    "u"
+   ],
+   "hypotheses": [],
+   "evidence": [
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e1"
+    ]
+   ],
+   "adversarial": "lexical_trap",
+   "adversarial_taught_in_curriculum": false,
+   "cue_set": "taught",
+   "fillers": [
+    {
+     "a": [
+      "the hypothesis-test feature flag was enabled",
+      "HYPOTHESIS_TEST_FLAG_ENABLED"
+     ],
+     "u": [
+      "the flag affected checkout latency",
+      "FLAG_AFFECTED_CHECKOUT_LATENCY"
+     ]
+    },
+    {
+     "a": [
+      "the hypothesis-ranking service was redeployed",
+      "HYPOTHESIS_RANKING_REDEPLOYED"
+     ],
+     "u": [
+      "the redeploy changed search ordering",
+      "REDEPLOY_CHANGED_ORDERING"
+     ]
+    },
+    {
+     "a": [
+      "the hypothesis notebook server restarted",
+      "HYPOTHESIS_NOTEBOOK_RESTARTED"
+     ],
+     "u": [
+      "unsaved notebooks were lost",
+      "UNSAVED_NOTEBOOKS_LOST"
+     ]
+    },
+    {
+     "a": [
+      "the hypothesis-store database was migrated",
+      "HYPOTHESIS_STORE_MIGRATED"
+     ],
+     "u": [
+      "the migration preserved all records",
+      "MIGRATION_PRESERVED_RECORDS"
+     ]
+    },
+    {
+     "a": [
+      "the hypothesis-tracker dashboard was deleted",
+      "HYPOTHESIS_TRACKER_DELETED"
+     ],
+     "u": [
+      "a backup of the dashboard exists",
+      "DASHBOARD_BACKUP_EXISTS"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "K24",
+   "frame": "{a} is recorded in {e2}, and {b} in {e1}. {h}, or so it has been suggested; this is not confirmed.",
+   "evidence_kind": "E",
+   "assertions": [
+    "a",
+    "b"
+   ],
+   "unknowns": [],
+   "hypotheses": [
+    "h"
+   ],
+   "evidence": [
+    "e2",
+    "e1"
+   ],
+   "support_edges": [
+    [
+     "a",
+     "e2"
+    ],
+    [
+     "b",
+     "e1"
+    ]
+   ],
+   "adversarial": "crossed_evidence_late_qualifier",
+   "adversarial_taught_in_curriculum": false,
+   "cue_set": "novel",
+   "fillers": [
+    {
+     "a": [
+      "the overheating of rack R9",
+      "RACK_R9_OVERHEATING"
+     ],
+     "b": [
+      "its fan failure",
+      "RACK_R9_FAN_FAILURE"
+     ],
+     "h": [
+      "the fan failure caused the overheating",
+      "FAN_FAILURE_CAUSED_OVERHEATING"
+     ]
+    },
+    {
+     "a": [
+      "the packet loss on link L4",
+      "LINK_L4_PACKET_LOSS"
+     ],
+     "b": [
+      "its CRC error burst",
+      "LINK_L4_CRC_ERRORS"
+     ],
+     "h": [
+      "the CRC errors caused the packet loss",
+      "CRC_ERRORS_CAUSED_PACKET_LOSS"
+     ]
+    },
+    {
+     "a": [
+      "the slow response of the billing API",
+      "BILLING_API_SLOW"
+     ],
+     "b": [
+      "its thread pool saturation",
+      "BILLING_THREAD_POOL_SATURATED"
+     ],
+     "h": [
+      "the saturated thread pool slowed the API",
+      "THREAD_POOL_SLOWED_API"
+     ]
+    },
+    {
+     "a": [
+      "the crash of node N8",
+      "NODE_N8_CRASH"
+     ],
+     "b": [
+      "its kernel panic",
+      "NODE_N8_KERNEL_PANIC"
+     ],
+     "h": [
+      "the kernel panic caused the crash",
+      "KERNEL_PANIC_CAUSED_CRASH"
+     ]
+    },
+    {
+     "a": [
+      "the data loss on volume V2",
+      "VOLUME_V2_DATA_LOSS"
+     ],
+     "b": [
+      "its failed write barrier",
+      "VOLUME_V2_WRITE_BARRIER_FAILED"
+     ],
+     "h": [
+      "the failed write barrier caused the data loss",
+      "WRITE_BARRIER_CAUSED_DATA_LOSS"
+     ]
+    }
+   ]
+  }
+ ]
+}

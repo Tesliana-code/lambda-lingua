@@ -1,0 +1,187 @@
+{
+  "experiment": "lambda-lingua-acquisition-01",
+  "version": "acq-01",
+  "status": "FROZEN — design only; no inference run",
+  "frozen_at_utc": "2026-10-08T16:44:09+00:00",
+  "git": {
+    "branch": "experiment/acquisition-01-20261008",
+    "base_commit": "844e9715e6085045b1cfc25d43fa14c5e9ee89a6",
+    "tracked_tree_clean": true,
+    "untracked_scope": "experiment-one/ only, added by the freeze commit whose parent is base_commit"
+  },
+  "language": {
+    "spec/lambda-v0.md": "2230db566f2ab6c08c9e0b5c23ca93d28e237328720553214da8f231f35a7cac"
+  },
+  "reused_parser": {
+    "runner/experiment_zero.py": "de45fd781df6d5555a7407a55372176ace908ce52d557b74b8eaa722c4f3438b"
+  },
+  "experiment_zero_benchmark": {
+    "benchmark/microtasks-v0.jsonl": "9f1083bda83f339dd1d316a408f6fb9b8c1be9dbcb60ecd3862b5e084768db2b"
+  },
+  "stage0_references": {
+    "experiment_zero_scores": {
+      "path": "artifacts/examinations/experiment-zero/summary/scores_official.json",
+      "sha256": "e02250053bce5adce8803a37ca61b342b6c13e49d558f2f4512d67d1faa19a32"
+    }
+  },
+  "external_references_uncommitted": {
+    "replication_phi_01_scores": {
+      "path": "/home/superadmin/lambda-lingua-replication-phi-01-20261007/results/summary/replication_phi_01/rphi01-20261008/scores_official.json",
+      "sha256": "e4f1d4f4e487f7e45f0f413a77704affca1752f21d9d11b1c70c8f176de0cc1d"
+    },
+    "replication_phi_01_epistemic_flips": {
+      "path": "/home/superadmin/lambda-lingua-replication-phi-01-20261007/results/summary/replication_phi_01/rphi01-20261008/epistemic_flips.json",
+      "sha256": "188ab70733776c27d43602f55c2f72e208de6d9d7db4c116d727ae9147788769"
+    }
+  },
+  "files": {
+    "experiment-one/README.md": "55569574ee91deef2199b2d9da265e7d49e06ce12160d5bad013aed7371fb07e",
+    "experiment-one/benchmark/acquisition-train.jsonl": "6ba73733066445076d224c4fd7157cdf87b736e750c2b2da068847ccb11f9485",
+    "experiment-one/benchmark/exam-skeletons.json": "2072a4bc2af2e5ae0ffee96a257140e0060c93f3c00a253834ce3c9bf8f17183",
+    "experiment-one/benchmark/schema.json": "5cc2a4011f72564d73d3f04f4dfedd354274212e04e0a46028017ec1061d24d2",
+    "experiment-one/benchmark/transfer-exam.jsonl": "d95d2516992593b3ec86cc78087398c6425588c146d3c2d211b19b2dab17080f",
+    "experiment-one/benchmark/unseen-exam-X0.jsonl": "379e2a90e2b32d59e8d07b3ac3b197683780b3526671e7d6eb6b5c2ffcf36cbe",
+    "experiment-one/benchmark/unseen-exam-X1.jsonl": "2124ac46bfb557d621412734ddd1d4b5c7cefdd67b78db0ca6904c8c56d90225",
+    "experiment-one/benchmark/unseen-exam-X2.jsonl": "58ae307ba3329d0c57798d5b0001f75d1cf74b03aa6f12e068e9831047516b78",
+    "experiment-one/benchmark/unseen-exam-X3.jsonl": "4cdb73c2a1df49a59d0114f5df88f7fd1a057df5889034d37fc6c4f93e49d039",
+    "experiment-one/benchmark/unseen-exam-X4.jsonl": "aded4307d3cc9d69975fd4fafe1286236b570ef9f6f37baa88025ab1778d5940",
+    "experiment-one/curriculum/compression-100.md": "2230db566f2ab6c08c9e0b5c23ca93d28e237328720553214da8f231f35a7cac",
+    "experiment-one/curriculum/compression-25.md": "24a9607ab16e20f2d899529577e6568f50fc8caaac51b28a6cacd9bdcfa3aa79",
+    "experiment-one/curriculum/compression-50.md": "ec3a8b897ec9e183c2e34f50b0f4dd70875e6e4ec3177bdaaa8fcc58cd4db81c",
+    "experiment-one/curriculum/compression-75.md": "9bf0406ac7cbb4543c94ef00280918b0b11b1dedd3a822008f3f8e61672cd6cb",
+    "experiment-one/curriculum/compression-examples-only.md": "dc28f4ed3296ca6164756e853a1261ffc9e1af57186d972d68030c197492f4cd",
+    "experiment-one/curriculum/compression-symbols-only.md": "e28be21ea5e05c7573c3b7145b9d8df20ef36d72869d7310feeb1b38c932a6bc",
+    "experiment-one/curriculum/stage-1-demonstrations.md": "09682a4b35b178fee0e393597b2499c373bc489536941a67533f951ab2df8588",
+    "experiment-one/curriculum/stage-2-corrections.md": "b1de5eaa0d2246dded03f66d9c60f10e0caf121ec22b3c29151f7d381baa3995",
+    "experiment-one/protocol.md": "49c85d1af3cb1e8047f0df1afb7810cd76440c42aa04f44827317ad76eb61a57",
+    "experiment-one/scoring/definitions.md": "4f9540b2d9bbdc19aef68c91070a2eb777b1f3eaa695a4fb31c4dfab3ef4728f",
+    "experiment-one/scoring/thresholds.json": "a7c799b771af6d7bb259dad4dc8639707cb64a5b78cb8cd8bf0008e038cde34d",
+    "experiment-one/tools/build_exam_forms.py": "0af17d3102a4cffbf4905ae2c74005f8608db91149664ab1f7a9b38290616dff",
+    "experiment-one/tools/verify_design.py": "d0141d54f7c9d0424fdc15643a405e9a5739e17875bb60e769e8516e55f1b171"
+  },
+  "verification": {
+    "compression": {
+      "100": {
+        "words": 459,
+        "ratio": 1.0,
+        "bytes": 3185
+      },
+      "75": {
+        "words": 349,
+        "ratio": 0.76,
+        "bytes": 2461
+      },
+      "50": {
+        "words": 219,
+        "ratio": 0.477,
+        "bytes": 1484
+      },
+      "25": {
+        "words": 112,
+        "ratio": 0.244,
+        "bytes": 673
+      },
+      "symbols-only": {
+        "words": 48,
+        "ratio": 0.105,
+        "bytes": 235
+      },
+      "examples-only": {
+        "words": 137,
+        "bytes": 1119
+      }
+    },
+    "balance": {
+      "train": {
+        "assertions": 12,
+        "items_with_assertions": 8,
+        "evidence": 11,
+        "items_with_evidence": 8,
+        "unknowns": 5,
+        "items_with_unknowns": 5,
+        "hypotheses": 5,
+        "items_with_hypotheses": 5,
+        "support_edges": 10,
+        "items_with_support_edges": 7,
+        "adversarial": 4,
+        "adversarial_taught": 4,
+        "adversarial_untaught": 0,
+        "novel_cue": 0,
+        "items": 9
+      },
+      "each_exam_form": {
+        "assertions": 29,
+        "items_with_assertions": 20,
+        "evidence": 27,
+        "items_with_evidence": 18,
+        "unknowns": 14,
+        "items_with_unknowns": 12,
+        "hypotheses": 13,
+        "items_with_hypotheses": 12,
+        "support_edges": 26,
+        "items_with_support_edges": 18,
+        "adversarial": 8,
+        "adversarial_taught": 5,
+        "adversarial_untaught": 3,
+        "novel_cue": 12,
+        "items": 24
+      },
+      "transfer": {
+        "assertions": 30,
+        "items_with_assertions": 21,
+        "evidence": 27,
+        "items_with_evidence": 18,
+        "unknowns": 12,
+        "items_with_unknowns": 12,
+        "hypotheses": 18,
+        "items_with_hypotheses": 15,
+        "support_edges": 27,
+        "items_with_support_edges": 18,
+        "adversarial": 9,
+        "adversarial_taught": 6,
+        "adversarial_untaught": 3,
+        "novel_cue": 15,
+        "items": 24
+      }
+    },
+    "adversarial_subtypes": {
+      "train": {
+        "plausible_cause": 1,
+        "orphan_evidence": 1,
+        "unsupported_assertion": 1,
+        "obvious_hypothesis": 1
+      },
+      "X0": {
+        "plausible_cause": 2,
+        "orphan_evidence": 1,
+        "unsupported_assertion": 1,
+        "obvious_hypothesis": 1,
+        "lexical_trap": 2,
+        "crossed_evidence_late_qualifier": 1
+      },
+      "transfer": {
+        "plausible_cause": 3,
+        "orphan_evidence": 3,
+        "lexical_trap": 3
+      }
+    },
+    "forms_regenerate_byte_identical": true,
+    "forms_structurally_identical": true,
+    "forms_mutually_disjoint": true,
+    "no_exam_leakage_into_teaching": true,
+    "experiment_zero_shared_4grams_per_split": {
+      "demonstrations": 0,
+      "train": 0,
+      "X0": 0,
+      "X1": 0,
+      "X2": 0,
+      "X3": 0,
+      "X4": 0,
+      "transfer": 0
+    },
+    "fresh_context_rule_locked": true,
+    "teaching_history_only_persistence": true,
+    "atl_teaching_token_only_accounting": true
+  },
+  "files_aggregate_sha256": "cf6a766274b9d3e936504eef42efcf9d8311cb474373fed1928a0822ab47e3b0"
+}

@@ -1,0 +1,84 @@
+{
+  "version": "acq-01-thresholds-v3",
+  "status": "FROZEN before inference",
+  "alignment_mode": "strict",
+  "competence": {
+    "exam": "checkpoint form: C0->unseen-exam-X0.jsonl, C1->X1, C2->X2, C3->X3, C4->X4; compression conditions->X0",
+    "exam_items": 24,
+    "require_all_records_valid": true,
+    "min_item_exact": 20,
+    "min_ESF": 0.9,
+    "min_PS": 0.9,
+    "min_US": 0.9,
+    "adversarial_items": 8,
+    "min_adversarial_item_exact": 6,
+    "max_laundering_events": 1
+  },
+  "acquisition": {
+    "ladder": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "worked_examples_in_context": {
+      "C0": 0,
+      "C1": 3,
+      "C2": 6,
+      "C3": 9,
+      "C4": 12
+    },
+    "primary_metric": "ATΛ_stable",
+    "ATΛ_stable_rule": "TT at the first checkpoint k from which competence holds at k and at every later checkpoint through C4; right-censored (> TT(C4)) if not competent at C4",
+    "ATΛ_first_rule": "TT at the first checkpoint meeting competence, regardless of later checkpoints; null if never competent",
+    "TT_statistic": "median over items i of the checkpoint's form of prompt_eval_count(k,i) - prompt_eval_count(NULL,i)",
+    "token_accounting": {
+      "ATΛ_counts": "teaching tokens only (TT)",
+      "excluded": [
+        "unseen-exam prompts",
+        "transfer-exam prompts",
+        "compression-evaluation prompts",
+        "scoring output",
+        "checkpoint evaluation overhead"
+      ],
+      "excluded_costs_reported_in": "TC"
+    }
+  },
+  "transfer": {
+    "exam": "benchmark/transfer-exam.jsonl",
+    "evaluated_at": "C4",
+    "requires_competence_at": "C4",
+    "domains_required": [
+      "science",
+      "logistics"
+    ],
+    "items_per_domain": 8,
+    "min_item_exact_per_domain": 6,
+    "min_ESF_per_domain": 0.9
+  },
+  "compression": {
+    "conditions": [
+      "CP-100",
+      "CP-75",
+      "CP-50",
+      "CP-25",
+      "CP-EX",
+      "CP-SYM"
+    ],
+    "competence_rule": "same as competence block, evaluated per condition"
+  },
+  "context_isolation": {
+    "fresh_context_per_call": true,
+    "persistent_history": "teaching only (demonstrations + corrected-exercise transcript)",
+    "exam_history_persists": false,
+    "checkpoint_context": {
+      "C0": "C0 curriculum state only",
+      "C1": "C1 curriculum state only",
+      "C2": "C2 curriculum state only",
+      "C3": "C3 curriculum state only",
+      "C4": "C4 curriculum state only"
+    },
+    "compression_conditions": "independent fresh runs; no teaching, feedback or hidden state carried between conditions"
+  }
+}
