@@ -19,11 +19,11 @@ Phi returned:
 
 Observed behavior:
 
-- used canonical ΛLingua-style syntax
-- preserved evidence identifier E8
-- reassigned epistemic roles
-- converted the health-check assertion into an unknown
-- converted DNS causality from unknown into hypothesis
-- omitted the canonical E7 support relation
+- canonical Λ-style syntax largely preserved
+- E8 preserved
+- epistemic roles reassigned
+- health-check assertion changed to unknown
+- DNS causality changed from unknown to hypothesis
+- canonical E7 provenance edge lost
 
 The raw response is preserved verbatim and must not be edited retroactively.
