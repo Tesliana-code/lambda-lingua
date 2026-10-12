@@ -51,7 +51,7 @@ for my $cite ($tex =~ /\\cite(?:\[[^\]]*\])?\{([^}]+)\}/g) {
 }
 for my $input ($tex =~ /\\(?:input|include)\{([^}]+)\}/g) {
     die "Unsafe input path: $input\n"
-        unless $input =~ /\A[A-Za-z0-9_./-]+\z/ && $input !~ m{(?:^|/)\.\.(?:/|$)};
+        unless $input =~ m{\A[A-Za-z0-9_./-]+\z} && $input !~ m{(?:^|/)\.\.(?:/|$)};
     my $path = "paper/arxiv/$input";
     die "Missing input: $path\n" unless -f $path || -f "$path.tex";
 }
