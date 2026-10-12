@@ -1,0 +1,40 @@
+name: Lambda Lingua manuscript integrity
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: perl paper/arxiv/scripts/check-manuscript.pl
+
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: |
+          set -euo pipefail
+          test -s paper/arxiv/main.tex
+          test -f paper/arxiv/references.bib
+          test -s paper/arxiv/RESULTS-TODO.md
+          test -s paper/arxiv/submission-metadata.md
+
+  diff-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - run: git diff --check origin/main...HEAD
